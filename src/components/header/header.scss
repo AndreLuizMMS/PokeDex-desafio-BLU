@@ -1,0 +1,30 @@
+.header-container {
+  background: #0f172a;
+  height: 10rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo-container {
+    & img {
+      width: 15rem;
+    }
+  }
+
+  .myPokedex-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & span {
+      color: white;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    & img {
+      width: 4rem;
+    }
+  }
+}

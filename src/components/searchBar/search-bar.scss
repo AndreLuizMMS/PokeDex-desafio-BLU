@@ -1,0 +1,35 @@
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  gap: 3rem;
+
+  .search-input {
+    background: #475569;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+
+    width: 26rem;
+    height: 4rem;
+    padding: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  & button {
+    background: #94a3b8;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+    padding: 1.5rem 2rem;
+
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,22 @@
+.homePage-container {
+  height: 245vh;
+  background: #1e293b;
+
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  .search-container {
+    width: 60%;
+    height: 100%;
+    gap: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+}
