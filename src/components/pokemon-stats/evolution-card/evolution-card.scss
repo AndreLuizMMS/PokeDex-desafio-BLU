@@ -1,0 +1,47 @@
+.evolutions {
+  width: 100%;
+  padding: 1rem;
+
+  background: #1e293b;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  div {
+    display: flex;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  .evolutions-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .evolution-specs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 10rem;
+      }
+
+      .name {
+        color: white;
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .tipos {
+        color: white;
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState = {
   homePreview: [],
-  currentPokemon: []
+  currentSearched: null
 };
 
 const searchPokemonsSlice = createSlice({
@@ -11,24 +11,14 @@ const searchPokemonsSlice = createSlice({
   initialState,
   reducers: {
     previewLoaded(state, action) {
-      console.log(state.homePreview.length);
-      if (!!state.homePreview.length) {
-        return {
-          currentPokemon: [],
-          homePreview: action.payload
-        };
-      } else {
-        return {
-          currentPokemon: [],
-          homePreview: action.payload
-        };
-      }
+      return {
+        currentSearched: null,
+        homePreview: action.payload
+      };
     },
     currentSearchedPokemon(state, action) {
-      return {
-        homePreview: [],
-        currentPokemon: action.payload
-      };
+      state.currentSearched = action.payload;
+      state.homePreview = [];
     }
   }
 });
@@ -38,21 +28,19 @@ export const { previewLoaded, currentSearchedPokemon } = searchPokemonsSlice.act
 export default searchPokemonsSlice.reducer;
 
 export const loadHomePreview = async dispatch => {
-  const randomPage = Math.floor(Math.random() * 1000) + 1;
+  const randomPage = Math.floor(Math.random() * 900) + 1;
   const req = await axios
     .get(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${randomPage}`)
     .then(res => res.data)
     .catch(err => new Error(err));
-  console.log(req.results);
   dispatch(previewLoaded(req.results));
 };
 
 export const searchForPokemon = async (nameOrId, dispatch) => {
   const req = await axios
     .get(`https://pokeapi.co/api/v2/pokemon/${nameOrId}`)
-    .then(res => {
-      return res.data;
-    })
-    .catch(err => {});
+    .then(res => res.data)
+    .catch(err => console.log(err));
+  // console.log(req);
   dispatch(currentSearchedPokemon(req));
 };

@@ -12,7 +12,7 @@ import './global.scss';
 
 function App() {
   const global = useSelector(state => state);
-  console.log(global);                  
+  // console.log(global);
   // console.log('rodou');
 
   return (

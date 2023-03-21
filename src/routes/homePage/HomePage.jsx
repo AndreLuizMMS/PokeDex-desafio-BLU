@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 
 import { loadHomePreview } from '../../reducers/searchPokemons/searchPokemons.slice';
 
-import Searchbar from '../../components/searchBar/Searchbar';
-import PokemonList from '../../components/pokemonList/PokemonList';
-import GenerateRandom from '../../components/generateRandom/GenerateRandom';
+import Searchbar from '../../components/search-bar/Searchbar';
+import PokemonList from '../../components/pokemon-list/PokemonList';
+import GenerateRandom from '../../components/generate-random/GenerateRandom';
 
 import './home-page.scss';
 
@@ -17,13 +17,16 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="homePage-container">
-      <div className="search-container">
-        <Searchbar />
-        <GenerateRandom />
-        <PokemonList />
+    <>
+      <div className="homePage-container">
+        <div className="search-container">
+          <Searchbar />
+          <GenerateRandom />
+          <PokemonList />
+        </div>
       </div>
-    </div>
+      <div className="bg"></div>
+    </>
   );
 };
 
