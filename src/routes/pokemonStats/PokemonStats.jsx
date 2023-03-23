@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import PokemonStatsInfo from '../../components/pokemon-stats/pokemon-stats-info/PokemonStatsInfo';
 import EvolutionCard from '../../components/pokemon-stats/evolution-card/EvolutionCard';
 import SpecsRoutes from '../../components/pokemon-stats/specs-routes/SpecsRoutes';
+import AddToPokedex from '../../components/pokemon-stats/add-to-pokedex/AddToPokedex';
 
 import getPokemonByIdOrName from '../../utils/getPokemonByIdOrName';
 
@@ -28,7 +29,8 @@ const Stats = ({ pokemon }) => {
       <div className="pokemon-stats-container">
         <PokemonStatsInfo pokemon={pokemon} />
         <EvolutionCard />
-        <SpecsRoutes pokemon={pokemon}/>
+        <SpecsRoutes pokemon={pokemon} />
+        <AddToPokedex />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const EvolutionCard = () => {
   return (
     <>
       {pokemonSpecies ? (
-        <Card evolutionChainURL={pokemonSpecies.url} />
+        <Card evolutionChainURL={pokemonSpecies.url} key={id} />
       ) : (
         <h1>loading</h1>
       )}
@@ -42,9 +42,17 @@ const Card = ({ evolutionChainURL }) => {
   }, []);
 
   if (evolution) {
-    const name1 = evolution.chain.species.name;
+    if (!evolution.chain.evolves_to.length) {
+      return (
+        <div className="evolutions">
+          <h1>Sem Evoluçoes</h1>
+        </div>
+      );
+    }
+
+    const name1 = evolution.chain?.species.name;
     const name2 = evolution.chain?.evolves_to[0]?.species.name;
-    const name3 = evolution.chain?.evolves_to[0].evolves_to[0]?.species.name;
+    const name3 = evolution.chain?.evolves_to[0]?.evolves_to[0]?.species.name;
 
     return (
       <div className="evolutions">
@@ -54,12 +62,6 @@ const Card = ({ evolutionChainURL }) => {
           <Evolution pokemonName={name2} />
           <Evolution pokemonName={name3} />
         </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="evolutions">
-        <h1>Sem Evoluções</h1>
       </div>
     );
   }

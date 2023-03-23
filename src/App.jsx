@@ -7,6 +7,7 @@ import { loadHomePreview } from './reducers/searchPokemons/searchPokemons.slice'
 import Header from './components/header/Header';
 import HomePage from './routes/homePage/HomePage';
 import PokemonStats from './routes/pokemonStats/PokemonStats';
+import TypesPage from './routes/typesPage/TypesPage';
 
 import './global.scss';
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/pokemonstats/:id" element={<PokemonStats />} />
+        <Route path="/types/:typeName" element={<TypesPage />} />
       </Routes>
     </>
   );

@@ -1,0 +1,50 @@
+.abilities-container {
+  background: #94a3b8;
+  position: absolute;
+
+  right: 28rem;
+  top: 25rem;
+
+  padding: 1rem;
+  width: 30rem;
+  border-radius: 10px;
+
+  color: white;
+
+  h1 {
+    color: black;
+  }
+
+  .abilities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    gap: 1rem;
+
+    background: #94a3b8;
+
+    border-radius: 10px;
+    margin-top: 2rem;
+  }
+}
+
+.card-container {
+  background: #1e293b;
+  width: 100%;
+  height: 10rem;
+  color: white;
+
+  border-radius: 10px;
+
+  padding: 1rem;
+
+  .name {
+    font-size: 2rem;
+  }
+  .short-effect {
+    font-size: 1.5rem;
+  }
+}
